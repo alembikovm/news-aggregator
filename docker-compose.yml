@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  news-aggregator:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_NEWSAPI_KEY=3f26b8991cb143efa0139de274a31192
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
